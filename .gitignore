@@ -1,0 +1,6 @@
+/database/*.sqlite
+/database/*.sqlite-*
+/canteen-data.json
+/canteen-data.json.tmp
+/*.class
+/out/
