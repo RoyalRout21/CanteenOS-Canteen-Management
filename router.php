@@ -8,7 +8,8 @@ if ($path === '/api/data') {
     return true;
 }
 
-if (in_array($path, ['/', '/index.html', '/app.js', '/styles.css', '/inventory-check.html'], true)) {
+if (in_array($path, ['/', '/index.html', '/customer.html', '/app.js', '/styles.css', '/inventory-check.html'], true)
+    || (is_string($path) && preg_match('/^\/[A-Za-z0-9_-]+\.jpg$/', $path) === 1)) {
     return false;
 }
 

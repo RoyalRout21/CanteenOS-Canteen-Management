@@ -89,6 +89,12 @@ public class CanteenServer {
         } else if ("/inventory-check.html".equals(path)) {
             fileName = "inventory-check.html";
             contentType = "text/html; charset=utf-8";
+        } else if ("/customer.html".equals(path)) {
+            fileName = "customer.html";
+            contentType = "text/html; charset=utf-8";
+        } else if (path.matches("/[A-Za-z0-9_-]+\\.jpg")) {
+            fileName = path.substring(1);
+            contentType = "image/jpeg";
         } else {
             sendText(exchange, 404, "text/plain; charset=utf-8", "Not found");
             return;

@@ -27,7 +27,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir site
-          cp index.html app.js styles.css site/
+          cp index.html customer.html app.js styles.css site/
           cp *.jpg site/
           sed -i 's/<html lang="en">/<html lang="en" data-server-api="disabled">/' site/index.html
       - name: Upload Pages artifact

@@ -265,7 +265,7 @@ function loadData() {
 }
 
 let data = loadData();
-let activePage = "customer";
+let activePage = document.documentElement.dataset.defaultPage || "overview";
 let customerCategory = "All categories";
 let customerSearch = "";
 const customerCart = new Map();
@@ -676,7 +676,7 @@ function renderCustomer() {
   ];
   activeHeroSlide = 0;
   return `<div class="customer-site">
-    <header class="customer-header"><a class="brand" href="#" aria-label="Royal's Canteen home"><span class="brand-mark">R<span>.</span></span><span class="brand-name">Royal's<span> Canteen</span></span></a><div class="customer-header-actions"><span class="customer-open"><i></i> Open now</span><button class="button secondary small" data-page="overview">Admin site</button></div></header>
+    <header class="customer-header"><a class="brand" href="customer.html" aria-label="Royal's Canteen home"><span class="brand-mark">R<span>.</span></span><span class="brand-name">Royal's<span> Canteen</span></span></a><div class="customer-header-actions"><span class="customer-open"><i></i> Open now</span><a class="button secondary small" href="index.html">Admin site</a></div></header>
     <section class="customer-hero"><div><span class="hero-kicker">FRESHLY MADE · READY FOR YOU</span><h1>Your next favorite<br>meal is right here.</h1><p>Good food, made fresh at Royal's Canteen. Pick your favorites and order in a few taps.</p><a href="#customer-menu" class="hero-link">Explore the menu <span>↓</span></a><div class="mobile-hero-controls"><button data-action="hero-slide" data-direction="-1" aria-label="Previous featured dish">‹</button><span id="mobile-hero-slide-name">Mutton Biryani</span><button data-action="hero-slide" data-direction="1" aria-label="Next featured dish">›</button></div></div><div class="hero-art" aria-label="Featured dishes">
       <div class="hero-orbit"></div><div class="hero-slides" aria-live="polite">${heroSlides.map((slide, index) => `<img class="hero-slide${index === 0 ? " active" : ""}" src="${slide.image}" alt="${escapeHtml(slide.name)}" aria-hidden="${index === 0 ? "false" : "true"}">`).join("")}</div>
       <button class="hero-slide-control previous" data-action="hero-slide" data-direction="-1" aria-label="Previous featured dish">‹</button><button class="hero-slide-control next" data-action="hero-slide" data-direction="1" aria-label="Next featured dish">›</button>
